@@ -9,6 +9,7 @@ const getNumberMax = () => {
     }
     return cont
 }
+
 // Desenvolva uma função que retorne o menor número;
 const getNumberMin = () => {
     let cont = numbers[0]
@@ -38,9 +39,25 @@ const getNumberParForZero = () => {
     }
     return numbers
 }
+const orderNumbers = () => {
+    const numbers = [6, 5, 23, 9, 1, 3, 2, 5, 17, 4, 5, 1]
+    for (let ultimo = numbers.length - 1; ultimo >= 0; ultimo--) {
+        for (let i = 0; i < ultimo; i++) {
+            if (numbers[i] > numbers[i + 1]) {
+                let temp = 0
+                temp = numbers[i]
+                numbers[i] = numbers[i + 1]
+                numbers[i + 1] = temp
+            }
+        }
+    }
+    return numbers
+}
 module.exports = {
     getNumberMax,
     getNumberMin,
     getNumberImpar,
-    getNumberParForZero
+    getNumberParForZero,
+    orderNumbers
 }
+
